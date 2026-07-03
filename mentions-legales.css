@@ -1,0 +1,115 @@
+:root {
+    --bleu-nuit: #284070;
+    --bleu-sombre: #162d63;
+    --orange: #f97316;
+    --orange-hover: #ea580c;
+    --gris-clair: #f8fafc;
+    --gris-moyen: #e2e8f0;
+    --texte-sombre: #2758a1;
+    --texte-clair: #ffffff;
+    --police-principale: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition: all 0.3s ease;
+}
+
+
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--police-principale);
+    color: var(--texte-sombre);
+    background-color: var(--gris-clair);
+    line-height: 1.6;
+}
+
+/* En-tête de la page */
+.page-header {
+    background-color: var(--gris-moyen);
+    text-align: center;
+    padding: 140px 0 40px 0;
+    border-bottom: 1px solid var(--gris-moyen);
+}
+
+/* ==========================================================================
+   14. STYLE SPÉCIFIQUE - PAGE MENTIONS LÉGALES
+   ========================================================================== */
+.legal-section {
+    background-color: var(--gris-clair);
+    padding: 4rem 5%;
+}
+
+.legal-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.legal-block {
+    background-color: var(--texte-clair);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border-left: 4px solid var(--bleu-nuit);
+}
+
+.legal-block h2 {
+    text-align: left;
+    font-size: 1.4rem;
+    color: var(--bleu-nuit);
+    margin-bottom: 1.2rem;
+}
+
+.legal-block h2::after {
+    margin: 0.4rem 0 0 0;
+    width: 40px;
+}
+
+.legal-block p {
+    font-size: 1rem;
+    color: var(--texte-sombre);
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.legal-block ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.legal-block ul li {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.legal-block ul li::before {
+    content: "•";
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.legal-block strong {
+    color: var(--bleu-sombre);
+}
+
+/* Réduction responsive de l'espacement pour les mobiles */
+@media (max-width: 600px) {
+    .legal-block {
+        padding: 1.5rem;
+    }
+}
+
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Produit | Groupe la Passerelle Network</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="produit.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="assistant.css">
+    <link rel="icon" href="logo_PN_c2.png" type="image/png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-brand">
+                <img src="logo_PN_c2.png" alt="Passerelle Network" class="logo-img">
+            </div>
+            
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="catalogue.html" class="nav-link">Catalogue</a></li>
+                    <li><a href="a-propos.html" class="nav-link">À propos</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="product-page-wrapper" id="productConstellationSection">
+        <canvas id="constellationCanvas"></canvas>
+
+        <div class="container relative-content">
+            <div class="back-nav-row">
+                <a href="catalogue.html" class="link-back">&larr; Retour au catalogue</a>
+            </div>
+
+            <section class="main-specs-sheet" id="productSpecsSheet">
+                </section>
+        </div>
+
+        <section class="conversion-cta-section">
+            <div class="container text-center">
+                <div class="cta-inner-box">
+                    <h2>Prêt à équiper votre structure avec ce matériel certifié ?</h2>
+                    <p>Contactez notre cellule technique commerciale basée à Pointe-Noire pour recevoir un devis d'approvisionnement personnalisé sous 24 heures[cite: 12, 56].</p>
+                    <div class="cta-action-holder">
+                        <a href="contact.html" class="btn btn-pulse-contact" id="ctaProductContact">
+                            Nous contacter
+                            <span class="btn-pulse-wave"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-flex-container">
+            <p>&copy; 2026 Groupe la Passerelle Network. Tous droits réservés.</p>
+            <ul class="footer-legal-links"><li><a href="mentions-legales.html">Mentions Légales</a></li></ul>
+        </div>
+    </footer>
+
+    <!--Assistant PN  -->
+    <!--Assistant PN-->
+    <div id="assistant-container" class="assistant-hidden">
+        <button id="assistant-trigger" class="assistant-trigger-btn">
+            <span class="pulse-ring"></span>
+            <span class="assistant-icon">💬</span>
+        </button>
+
+        <div id="assistant-window" class="assistant-card">
+            <div class="assistant-header">
+                <div class="assistant-profile">
+                    <div class="avatar">PN</div>
+                    <div>
+                        <h4>Assistant Passerelle</h4>
+                        <span class="online-indicator">En ligne</span>
+                    </div>
+                </div>
+            </div>
+            <div class="assistant-chat-body" id="chatBody">
+                </div>
+            <div class="assistant-actions-panel" id="actionsPanel">
+                </div>
+        </div>
+    </div>
+    <script src="header.js"></script>
+    <script src="assistant.js"></script>
+
+    <script src="produit.js"></script>
+</body>
+</html>

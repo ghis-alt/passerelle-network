@@ -1,0 +1,155 @@
+:root {
+    --bg-dark-blue: #112240;
+    --primary-blue: #0a192f;
+    --accent-orange: #ff6b00;
+    --accent-orange-hover: #e05e00;
+    --text-white: #f8fafc;
+    --text-muted: #94a3b8;
+    --bg-light-gray: #e1e9f0;
+    --card-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.3);
+    --border-radius: 12px;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition: all 0.3s ease;
+}
+
+/* RESET ET STYLES GENERAUX */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--primary-blue);
+    background-color: var(--text-white);
+}
+
+.logo img {
+    height: 100px; /* Ajustable selon les proportions de ton logo */
+    object-fit: contain;
+}
+
+/* 1. ANIMATION DU PRELOADER */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark-blue);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#preloader.fade-out {
+    transform: translateY(-100%);
+}
+
+.loader-content {
+    text-align: center;
+    color: var(--text-white);
+}
+
+.logo-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-white);
+    letter-spacing: 2px;
+}
+
+.orbit-ellipse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top-color: var(--accent-orange);
+    border-bottom-color: var(--accent-orange);
+    border-radius: 50%;
+    animation: rotateOrbit 1.5s linear infinite;
+}
+
+.loader-bar {
+    width: 200px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin: 0 auto 16px;
+    overflow: hidden;
+}
+
+.loader-progress {
+    width: 0%;
+    height: 100%;
+    background-color: var(--accent-orange);
+    animation: loadProgress 1.4s ease-in-out forwards;
+}
+
+.loader-phrase {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+@keyframes rotateOrbit {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.05); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes loadProgress {
+    to { width: 100%; }
+}
+
+
+/* BOUTONS COMPLETS */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+    border: none;
+    font-size: 0.95rem;
+}
+
+.btn-outline-nav {
+    border: 1px solid var(--accent-orange);
+    color: var(--accent-orange);
+    padding: 10px 20px;
+    background: transparent;
+}
+
+.btn-outline-nav:hover {
+    background-color: var(--accent-orange);
+    color: var(--text-white);
+}
+/* SECTION HERO / ACCUEIL */
+
+.badge {
+    background-color: rgba(255, 107, 0, 0.1);
+    color: var(--accent-orange);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+

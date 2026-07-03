@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 150px;
+            height: 30px;
+            color: rgb(21, 21, 122);
+            background-color: orange;
+            border-radius: 30px;
+        }
+
+        body{
+            background-image: url('logo_PN_c2.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            margin: 200px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <input type="button" value="Valider" class="valider" style="cursor: pointer;border: blue 3px solid;">
+        <input type="text" placeholder="entrez le mot de passe" class="enter" style="border: blue 3px solid;">
+    </form>
+</body>
+<script src="access.js"></script>
+</html>

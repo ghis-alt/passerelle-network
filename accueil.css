@@ -1,0 +1,462 @@
+/* ==========================================================================
+   VARIABLES DE CHARTE GRAPHIQUE UNIFIÉE
+   ========================================================================== */
+:root {
+    --blue-pn-historique: #1e3a6d;  /* Le bleu nuit solide d'origine */
+    --orange-pn-contour: #ff6b00;   /* L'orange vif pour les accents et contours */
+    --bg-light-clean: #f8fafc;      /* Fond gris-blanc très clair pour les sections */
+    --dark-slate-text: #1e293b;     /* Couleur du texte principal */
+    --border-color-soft: #e2e8f0;   /* Bordures discrètes */
+}
+
+body {
+    background-color: var(--bg-light-clean);
+    color: var(--dark-slate-text);
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+/* Titres & Textes Génériques des Sections */
+.section-title {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--blue-pn-historique);
+    margin-bottom: 20px;
+}
+
+.section-paragraph {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--dark-slate-text);
+    margin-bottom: 24px;
+}
+
+.link-en-savoir-plus {
+    color: var(--orange-pn-contour);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.link-en-savoir-plus:hover {
+    transform: translateX(6px);
+}
+
+/*
+
+/* ==========================================================================
+   SECTION 2 : À PROPOS (TEXTE & VIDÉO ORBITALE)
+   ========================================================================== */
+.about-preview-section {
+    padding: 90px 0;
+    background-color: #ffffff;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Conteneur fixe de la vidéo circulaire */
+.orbital-video-container {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+}
+
+/* L'anneau orange extérieur en rotation continue */
+.orange-trace-ring {
+    position: absolute;
+    top: -15px; left: -15px;
+    width: 310px; height: 310px;
+    border: 3px dashed var(--orange-pn-contour);
+    border-radius: 50%;
+    animation: spin-clockwise 25s linear infinite;
+}
+
+/* Petit logo photo fixé sur la trace orange */
+.satellite-logo-img {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid var(--orange-pn-contour);
+    padding: 4px;
+    object-fit: contain;
+    animation: spin-counter-clockwise 25s linear infinite; /* Stabilise le logo droit */
+}
+
+/* Masque circulaire pour la vidéo */
+.video-circle-mask {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(30, 58, 109, 0.15);
+    border: 6px solid #ffffff;
+    background-color: #000000;
+}
+
+.circle-embedded-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+/* ==========================================================================
+   SECTION 3 : COMPÉTENCES & BLOC VERTICAL HISTORIQUE DROITE
+   ========================================================================== */
+.expertise-preview-section {
+    padding: 90px 0;
+}
+
+.expertise-layout-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 36px;
+}
+
+.expertise-row-card {
+    background-color: #ffffff;
+    padding: 24px 28px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border-left: 5px solid var(--blue-pn-historique);
+}
+
+.expertise-row-card h3 {
+    color: var(--blue-pn-historique);
+    font-size: 1.25rem;
+    margin: 0 0 8px 0;
+}
+
+.expertise-row-card p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.prest-link-action {
+    display: inline-block;
+    color: var(--blue-pn-historique);
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 2px solid var(--blue-pn-historique);
+    padding-bottom: 4px;
+    font-size: 1.05rem;
+}
+
+.prest-link-action:hover {
+    color: var(--orange-pn-contour);
+    border-color: var(--orange-pn-contour);
+}
+
+/* Le bloc vertical blanc d'origine repéré à droite */
+.expertise-sidebar-panel {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 32px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-color-soft);
+}
+
+.box-header-title {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--blue-pn-historique);
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--bg-light-clean);
+    text-align: center;
+}
+
+.vertical-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.vertical-links-list li {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--dark-slate-text);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.vertical-links-list li .num {
+    font-size: 0.75rem;
+    background-color: var(--bg-light-clean);
+    color: var(--blue-pn-historique);
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   SECTION 4 : ACTUALITÉS
+   ========================================================================== */
+.news-and-catalog-preview {
+    padding: 90px 0;
+    background-color: #ffffff;
+}
+
+.actualite-card-item {
+    background-color: var(--bg-light-clean);
+    padding: 32px;
+    border-radius: 8px;
+    margin-top: 14px;
+}
+
+
+
+.actualite-card-item h3 {
+    color: var(--blue-pn-historique);
+    margin: 0 0 12px 0;
+}
+
+.actualite-card-item p {
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+}
+/* ==========================================================================
+   STYLE DE LA SECTION APERÇU PRODUITS
+   ========================================================================== */
+.products-preview-section {
+    padding: 80px 0;
+    background-color: #ffffff; /* Fond blanc propre pour faire ressortir les cartes grisâtres */
+}
+
+/* Grille alignant les 3 produits de façon identique à votre maquette */
+.photo-products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+/* Style de base de chaque case produit (Aspect robuste et épuré) */
+.photo-product-item {
+    background-color: #f8f9fc; /* Fond gris-bleu très clair d'origine */
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Requis pour bloquer le zoom de l'image à l'intérieur */
+    box-sizing: border-box;
+    /* Transition ultra fluide pour l'effet de soulèvement et l'ombre */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.4s ease;
+}
+
+/* Cadre interne accueillant votre future vraie photo */
+.img-frame-placeholder {
+    width: 100%;
+    height: 140px; /* Hauteur calibrée parfaite */
+    background-color: #ffffff; /* Fond blanc interne pour la photo */
+    border-radius: 6px;
+    margin-bottom: 16px;
+    overflow: hidden; /* Empêche l'image de déborder pendant le zoom */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f1f5f9;
+}
+
+/* L'image réelle du produit */
+.real-asset-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste et recadre la photo proprement sans distorsion */
+    display: block;
+    /* Transition pour l'effet de zoom spécial */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Zone textuelle sous l'image */
+.product-info h4 {
+    font-size: 1.1rem;
+    color: #1e3a6d; /* Votre bleu nuit historique */
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    transition: color 0.3s ease;
+}
+
+.product-meta {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   LES EFFETS VISUELS DISRUPTIFS AU SURVOL (HOVER EFFECTS)
+   ========================================================================== */
+.photo-product-item:hover {
+    /* 1. Élévation physique au-dessus des autres cases (translateY) */
+    transform: translateY(-8px);
+    
+    /* 2. Ombre portée intense simulant la hauteur */
+    box-shadow: 0 20px 35px rgba(30, 58, 109, 0.12);
+    
+    /* 3. Activation du contour orange de la marque */
+    border-color: #ff6b00;
+}
+
+/* 4. Effet spécial : Zoom interne sur la photo */
+.photo-product-item:hover .real-asset-img {
+    transform: scale(1.08);
+}
+
+/* 5. Changement de couleur dynamique du titre au survol */
+.photo-product-item:hover .product-info h4 {
+    color: #ff6b00;
+}
+
+/* ==========================================================================
+   LE LIEN SPÉCIAL "PLUS DE PRODUITS"
+   ========================================================================== */
+.more-products-wrapper {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-more-products {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #ff6b00; /* Orange vif de votre charte graphique */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-more-products .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Effet interactif sur le lien "Plus de produits" */
+.btn-more-products:hover {
+    background-color: rgba(255, 107, 0, 0.06); /* Léger fond orange transparent au survol */
+}
+
+.btn-more-products:hover .arrow-icon {
+    transform: translateX(6px); /* La flèche se déplace vers la droite */
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (ADAPTATION SMARTPHONE)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .photo-products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .photo-products-grid {
+        grid-template-columns: 1fr; /* 1 seule colonne verticale sur smartphone */
+        gap: 16px;
+    
+    }
+    .satellite-logo-img {
+    position: absolute;
+    top: 0px;
+    }
+    .photo-product-item {
+        padding: 16px;
+    }
+    
+    .photo-product-item:hover {
+        transform: translateY(-5px); /* Élévation légèrement réduite sur mobile */
+    }
+}
+
+/* ==========================================================================
+   ANIMATIONS CORE ENGINE
+   ========================================================================== */
+@keyframes spin-clockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-counter-clockwise {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+@keyframes fill-loading {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes floating-rocket {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN ADAPTATIF COMPLET (MOBILE & TABLETTE)
+   ========================================================================== */
+
+@media (max-width: 576px) {
+    .orbital-video-container {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .orange-trace-ring {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .photo-products-grid {
+        grid-template-columns: 1fr; /* Alignement vertical complet des 3 blocs d'aperçu produits */
+    }
+}
+
+@media(max-width: 630px){
+    .about-grid{
+        display: flex;
+        flex-direction: column;
+    }
+}

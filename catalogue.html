@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupe la Passerelle Network | Catalogue Produits</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="catalogue.css">
+    <link rel="stylesheet" href="assistant.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="icon" href="logo_PN_c2.png" type="image/png" sizes="32x32">    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-brand">
+                <img src="logo_PN_c2.png" alt="Passerelle Network" class="logo-img">
+            </div>
+            
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="catalogue.html" class="nav-link active">Catalogue</a></li>
+                    <li><a href="a-propos.html" class="nav-link">À propos</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="catalogue-wrapper">
+        <section class="catalogue-intro">
+            <div class="container text-center">
+                <h1 class="page-main-title">Notre Catalogue Produits</h1>
+                <p class="page-subtitle">Filtrez et découvrez nos équipements mis à jour en temps réel via notre base JSON[cite: 31].</p>
+            </div>
+        </section>
+
+        <section class="filter-section">
+            <div class="container">
+                <div class="filter-dark-box">
+                    <div class="filter-row-top">
+                        <div class="category-group">
+                            <span class="filter-label">Catégorie</span>
+                            <div class="category-buttons">
+                                <button class="btn-cat active" data-category="all">Tout voir</button>
+                                <button class="btn-cat" data-category="reseaux">Équipements Réseaux</button>
+                                <button class="btn-cat" data-category="materiel">Matériel Informatique</button>
+                                <button class="btn-cat" data-category="accessoires">Accessoires</button>
+                            </div>
+                        </div>
+
+                        <div class="search-group">
+                            <span class="filter-label">Recherche</span>
+                            <div class="search-input-wrapper">
+                                <input type="text" id="keywordSearch" placeholder="Ex: Core i7, Cisco...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-row-bottom">
+                        <div class="select-group">
+                            <span class="filter-label">Marque</span>
+                            <select id="brandSelect">
+                                <option value="all">Toutes les marques</option>
+                                <option value="dell">Dell</option>
+                                <option value="hp">HP</option>
+                                <option value="apple">Apple (iPhone)</option>
+                                <option value="acer">Acer</option>
+                                <option value="cisco">Cisco</option>
+                            </select>
+                        </div>
+
+                        <div class="range-group">
+                            <div class="range-labels">
+                                <span class="filter-label">Prix maxim um</span>
+                                <span id="priceDisplay" class="price-val">10 000 000 FCFA</span>
+                            </div>
+                            <input type="range" id="priceRange" min="0" max="10000000" step="5000" value="10000000">
+                        </div>
+
+                        <div class="currency-group">
+                            <span class="filter-label">Devise</span>
+                            <select id="currencySelect">
+                                <option value="XAF">FCFA (XAF)</option>
+                                <option value="USD">Dollar ($)</option>
+                                <option value="EUR">Euro (€)</option>
+                                <option value="AOA">Kwanza (AOA)</option>
+                                <option value="GBP">Livre Sterling (£)</option>
+                                <option value="CDF">Franc congolais (CDF)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-grid-section">
+            <div class="container">
+                <div class="products-grid" id="productsGrid">
+                    </div>
+                
+                <div id="noResultsBox" class="no-results-alert hidden text-center">
+                    <p class="alert-message">Aucun produit ne correspond à ces critères.</p>
+                    <button id="resetFiltersBtn" class="btn-reset-orange">Réinitialiser tous les filtres</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-flex-container">
+            <p>&copy; 2026 Groupe la Passerelle Network. Tous droits réservés.</p>
+            <ul class="footer-legal-links"><li><a href="mentions-legales.html">Mentions Légales</a></li></ul>
+        </div>
+    </footer>
+    <!--Assistant PN  -->
+    <!--Assistant PN-->
+    <div id="assistant-container" class="assistant-hidden">
+        <button id="assistant-trigger" class="assistant-trigger-btn">
+            <span class="pulse-ring"></span>
+            <span class="assistant-icon">💬</span>
+        </button>
+
+        <div id="assistant-window" class="assistant-card">
+            <div class="assistant-header">
+                <div class="assistant-profile">
+                    <div class="avatar">PN</div>
+                    <div>
+                        <h4>Assistant Passerelle</h4>
+                        <span class="online-indicator">En ligne</span>
+                    </div>
+                </div>
+            </div>
+            <div class="assistant-chat-body" id="chatBody">
+                </div>
+            <div class="assistant-actions-panel" id="actionsPanel">
+                </div>
+        </div>
+    </div>
+    <script src="header.js"></script>
+    <script src="assistant.js"></script>
+    <script src="catalogue.js"></script>
+</body>
+</html>

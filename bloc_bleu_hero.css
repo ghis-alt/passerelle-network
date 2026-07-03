@@ -1,0 +1,251 @@
+/* ==========================================================================
+   VARIABLES DE CHARTE GRAPHIQUE UNIFIÉE
+   ========================================================================== */
+:root {
+    --blue-pn-historique: #1e3a6d;  /* Le bleu nuit solide d'origine */
+    --orange-pn-contour: #ff6b00;   /* L'orange vif pour les accents et contours */
+    --bg-light-clean: #f8fafc;      /* Fond gris-blanc très clair pour les sections */
+    --dark-slate-text: #1e293b;     /* Couleur du texte principal */
+    --border-color-soft: #e2e8f0;   /* Bordures discrètes */
+}
+
+/* ==========================================================================
+   SECTION 1 : LE GRAND BLOC BLEU (HERO SECTION ACCUEIL)
+   ========================================================================== */
+.hero-section {
+    background-color: var(--blue-pn-historique);
+    width: 100%;
+    min-height: 520px;
+    padding: 170px 0 100px 0; /* Gère l'espace sous le header fixe */
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* Grille asymétrique rigoureuse : Texte à gauche (60%) / Visuel à droite (40%) */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+}
+
+/* Aligné strictement à gauche */
+.hero-text-content {
+    text-align: left;
+}
+
+.hero-text-content .badge {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--orange-pn-contour);
+    margin-bottom: 16px;
+}
+
+.hero-text-content h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Accentuation de la couleur orange de la charte */
+.text-gradient {
+    color: var(--orange-pn-contour);
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.hero-lead {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 580px;
+    margin-bottom: 36px;
+    opacity: 0.9;
+}
+
+/* Alignement des boutons d'actions */
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/* Structure robuste des boutons épurés */
+.hero-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 26px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* Bouton Découvrir nos services (Bordure blanche nette) */
+.hero-actions .btn-primary {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.hero-actions .btn-primary:hover {
+    background-color: #ffffff;
+    color: var(--blue-pn-historique);
+}
+
+/* Bouton Nous contacter / Contact (Bordure discrète) */
+.hero-actions .btn-secondary {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-actions .btn-secondary:hover {
+    border-color: #ffffff;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Alignement du contenu graphique à droite */
+.hero-visual-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.tech-card-wrapper {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cadre de statut réseau */
+.tech-status-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 22px;
+    width: 260px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.status-dot.green {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22c55e;
+}
+
+.status-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.status-body p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin: 0 0 10px 0;
+}
+
+.mini-graph {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 32px;
+}
+
+.mini-graph span {
+    display: block;
+    flex: 1;
+    background-color: var(--orange-pn-contour);
+    border-radius: 2px;
+    opacity: 0.85;
+}
+
+/* Badge Fusée d'expertise flottante */
+.tech-badge-floating {
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+    background-color: var(--blue-pn-historique);
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    z-index: 3;
+    border-left: 4px solid var(--orange-pn-contour);
+    animation: floating-rocket 3.5s ease-in-out infinite;
+    box-sizing: border-box;
+}
+
+.tech-badge-floating .icon {
+    font-size: 1.6rem;
+}
+
+.tech-badge-floating h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+}
+
+.tech-badge-floating p {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+    margin: 2px 0 0 0;
+}
+
+@media (max-width: 576px) {
+    .hero-text-content h1 {
+        font-size: 2.1rem;
+    }
+    
+    .hero-actions .btn {
+        width: 100%; /* Boutons en pleine largeur sur smartphone */
+    }
+    
+}
+
+@media(max-width: 670px){
+    .hero-text-content{
+        text-align: center;
+    }
+    .hero-grid{
+        display: flex;
+        flex-direction: column;
+    }
+}
+

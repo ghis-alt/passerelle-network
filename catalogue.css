@@ -1,0 +1,85 @@
+:root {
+    --blue-pn-historique: #1e3a6d;
+    --blue-cta-layer: #152c52;
+    --orange-pn-contour: #ff6b00;
+    --bg-light-cards: #f8fafc;
+    --dark-text-slate: #1e293b;
+    --text-muted: #64748b;
+    --border-soft: #e2e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--dark-text-slate); background: #ffffff; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+
+/* EN-TÊTE */
+.catalogue-intro { padding: 140px 0 40px 0; }
+.page-main-title { font-size: 2.3rem; color: var(--blue-pn-historique); margin-bottom: 12px; font-weight: 800; }
+.page-subtitle { color: var(--text-muted); font-size: 1.1rem; }
+
+/* BLOC DE FILTRAGE BLEU NUIT (CONFORME IMAGE) */
+.filter-section { margin-bottom: 40px; }
+.filter-dark-box { background: #0f1e36; border-radius: 12px; padding: 24px; color: #ffffff; }
+.filter-row-bottom { display: flex; gap: 30px; align-items: flex-end; flex-wrap: wrap; }
+.filter-row-top { border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 20px; margin-bottom: 20px; }
+
+.filter-label { display: block; font-size: 0.85rem; color: #94a3b8; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
+
+/* Boutons Catégories */
+.category-buttons { display: flex; gap: 10px; flex-direction: row;}
+.btn-cat { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #cbd5e1; padding: 10px 20px; border-radius: 30px; font-weight: 600; cursor: pointer; font-size: 0.9rem; transition: all 0.3s ease; }
+.btn-cat.active, .btn-cat:hover { background: var(--orange-pn-contour); color: #ffffff; border-color: var(--orange-pn-contour); }
+
+/* Recherche Input */
+.search-input-wrapper input { width: 300px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 11px 16px; color: #ffffff; font-family: inherit; font-size: 0.9rem; }
+.search-input-wrapper input:focus { outline: none; border-color: var(--orange-pn-contour); }
+
+/* Selects & Ranges */
+#brandSelect, #currencySelect { background: #152c52; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #ffffff; padding: 10px 14px; font-family: inherit; width: 180px; cursor: pointer; }
+.range-group { flex-grow: 1; }
+.range-labels { display: flex; justify-content: space-between; align-items: center; }
+.price-val { font-weight: 700; color: var(--orange-pn-contour); font-size: 1.05rem; }
+#priceRange { width: 100%; margin-top: 10px; accent-color: var(--orange-pn-contour); cursor: pointer; }
+
+/* GRILLE ET CARTES PRODUITS */
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; transition: all 0.4s ease; }
+
+.product-premium-card { background: var(--bg-light-cards); border: 1px solid var(--border-soft); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease; }
+.card-img-container { position: relative; height: 220px; background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 16px; overflow: hidden; } /* Conteneur sécurisé anti-débordement */
+
+.prod-img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+
+/* COMPORTEMENT AU SURVOL COMPLET */
+.product-premium-card:hover { background: #ffffff; border-color: var(--orange-pn-contour); transform: translateY(-6px); box-shadow: 0 15px 30px rgba(30,38,60,0.08); }
+.product-premium-card:hover .prod-img { transform: scale(1.06); } /* Zoom interne sécurisé sans dépasser */
+
+/* Badges & Textes */
+.badge-stock { position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+.badge-stock.in { background: rgba(34,197,94,0.1); color: #16a34a; }
+.badge-stock.out { background: rgba(249,115,22,0.1); color: #ea580c; }
+
+.card-body { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+.prod-brand { font-size: 0.75rem; font-weight: 800; color: var(--orange-pn-contour); letter-spacing: 1px; margin-bottom: 6px; }
+.card-body h3 { font-size: 1.15rem; color: var(--blue-pn-historique); margin-bottom: 10px; font-weight: 700; }
+.prod-desc-short { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; flex-grow: 1; }
+
+.card-footer-row { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border-soft); }
+.prod-price { font-size: 1.2rem; font-weight: 800; color: var(--blue-pn-historique); }
+
+.btn-details { background: none; border: 1px solid var(--blue-pn-historique); color: var(--blue-pn-historique); padding: 8px 14px; border-radius: 4px; font-weight: 600; font-size: 0.85rem; cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
+.btn-details:hover { background: var(--blue-pn-historique); color: #ffffff; }
+
+/* ALERTE AUCUN RESULTAT AVEC REINITIALISATION */
+.no-results-alert { padding: 60px 0; background: var(--bg-light-cards); border-radius: 8px; border: 1px dashed var(--border-soft); margin-top: 20px; }
+.alert-message { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 16px; }
+.btn-reset-orange { background: var(--orange-pn-contour); border: none; color: #ffffff; padding: 12px 24px; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 0.95rem; font-family: inherit; transition: background-color 0.3s ease; }
+.btn-reset-orange:hover { background: #e05e00; }
+
+@media(max-width:992px){ .products-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:600px){ .products-grid { grid-template-columns: 1fr; } .filter-row-top, .filter-row-bottom { flex-direction: column; align-items: fill; } .search-input-wrapper input { width:100%; } }
+@media(max-width:580px){ .category-buttons{display: flex;flex-direction: column;}
+                         .filter-section{display: flex;}
+                         .filter-row-top{display: block;}
+}

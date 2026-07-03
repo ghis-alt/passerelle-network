@@ -1,0 +1,46 @@
+:root {
+    --blue-pn-historique: #1e3a6d;
+    --blue-cta-layer: #152c52;
+    --orange-pn-contour: #ff6b00;
+    --bg-light-cards: #f8fafc;
+    --dark-text-slate: #1e293b;
+    --text-muted: #64748b;
+    --border-soft: #e2e8f0;
+}
+
+/* ==========================================================================
+   FOOTER UNIFIÉ
+   ========================================================================== */
+.main-footer {
+    background-color: var(--blue-pn-historique);
+    color: #ffffff;
+    padding: 32px 0;
+}
+
+.footer-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-flex-container p {
+    margin: 0;
+}
+
+.footer-legal-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-legal-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-legal-links a:hover {
+    color: var(--orange-pn-contour);
+}

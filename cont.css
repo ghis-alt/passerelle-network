@@ -1,0 +1,287 @@
+/* Variables fondamentales */
+:root {
+    --primary-blue: #002147;
+    --accent-orange: #ff6600;
+    --hover-orange: #be4c00; /* Orange PLUS SOMBRE pour le Hover */
+    --light-blue-bg: #f0f4f8;
+    --text-muted: #666;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--dark-text-slate); background: #ffffff; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+
+
+/* Bannière */
+.contact-hero-section {
+    background-color: var(--light-blue-bg);
+    padding: 150px 0;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Layout en 2 colonnes inversées */
+.contact-layout-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr; /* Formulaire plus large à gauche */
+    gap: 50px;
+    padding: 50px 0;
+}
+
+/* Style du Formulaire Premium */
+.contact-form-block h2, .contact-info-block h2 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+.form-instruction, .info-instruction {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+.premium-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.form-group label {
+    font-weight: 600;
+    color: var(--primary-blue);
+    font-size: 0.95rem;
+}
+.form-group input, .form-group textarea {
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* FOCUS DES INPUTS : ALLUMAGE EN BORDURE ORANGE */
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.15);
+}
+
+/* BOUTON PULSE ORANGE AVEC COMPORTEMENT SOMBRE AU HOVER */
+.btn-pulse-orange {
+    position: relative;
+    background-color: var(--accent-orange);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1;
+}
+.btn-pulse-orange::before {
+    content: "";
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    border-radius: 30px;
+    background-color: var(--accent-orange);
+    opacity: 0.4;
+    z-index: -1;
+    animation: wavesPulse 2s infinite ease-out;
+}
+@keyframes wavesPulse {
+    0% { transform: scale(1); opacity: 0.4; }
+    100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* COMPORTEMENT HOVER : DEVIENT PLUS SOMBRE ET STOPPE LE PULSE */
+.btn-pulse-orange:hover {
+    background-color: var(--hover-orange); /* Orange sombre */
+    transform: translateY(-2px);
+}
+.btn-pulse-orange:hover::before {
+    animation: none;
+    opacity: 0;
+}
+
+/* Bloc d'informations & Boules Bleues */
+.info-cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+.info-item-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* FORCE L'AFFICHAGE CHIRURGICAL DE LA BOULE BLEUE AVEC ICÔNE BLANCHE */
+.icon-sphere-blue {
+    width: 55px;
+    height: 55px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 33, 71, 0.15);
+}
+.icon-sphere-blue svg {
+    width: 24px;
+    height: 24px;
+    color: #ffffff !important;
+    display: block;
+}
+.info-text-details h3 {
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    margin-bottom: 4px;
+}
+.info-text-details p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Section Réseaux Sociaux & Canaux Bas de page */
+.social-channels-footer-section {
+    background-color: #f8fafc;
+    padding: 60px 0;
+    border-top: 1px solid #e2e8f0;
+}
+.social-intro {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+.channels-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colonnes alignées */
+    gap: 20px;
+}
+.channel-card {
+    background: white;
+    padding: 25px 15px;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.channel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.channel-icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.channel-icon-circle svg {
+    width: 22px;
+    height: 22px;
+    color: white !important;
+}
+
+/* Couleurs spécifiques des cercles de réseaux */
+.phone-blue { background-color: #002147; }
+.whatsapp-green { background-color: #25D366; }
+.facebook-blue { background-color: #1877F2; }
+.youtube-red { background-color: #FF0000; }
+.whatsapp-channel-teal { background-color: #075E54; }
+
+.channel-card h3 {
+    font-size: 1rem;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+.channel-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+.click-trigger-link {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--accent-orange);
+}
+
+/* Boîte de succès */
+.success-alert-box {
+    background-color: var(--light-blue-bg);
+    border: 1px solid #bdd7ff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.success-icon-check {
+    width: 50px;
+    height: 50px;
+    background-color: #2e7d32;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+}
+.hidden { display: none !important; }
+
+.captcha-wrapper-box {
+    background: #f1f5f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.captcha-txt {
+    font-weight: bold;
+    color: var(--accent-orange);
+    font-size: 1.1rem;
+}
+.captcha-wrapper-box input {
+    max-width: 120px;
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .channels-grid-layout { grid-template-columns: repeat(2, 1fr); }
+    .contact-layout-grid { grid-template-columns: 1fr; }
+}
+
+@media(max-width: 630px){
+    .form-row{
+        display: flex;
+        flex-direction: column;
+    }
+}

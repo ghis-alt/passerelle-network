@@ -1,0 +1,270 @@
+/* ==========================================================================
+   CHARTE GRAPHIQUE UNIQUE DE LA PAGE SERVICES
+   ========================================================================== */
+:root {
+    --blue-pn-historique: #1e3a6d;      /* Bleu nuit historique */
+    --blue-cta-layer: #152c52;          /* Bleu intermédiaire distinct du footer */
+    --orange-pn-contour: #ff6b00;       /* Orange vif d'accentuation */
+    --bg-light-cards: #f8fafc;          /* Gris clair historique de vos images */
+    --dark-text-slate: #1e293b;         /* Couleur de lecture haut de gamme */
+    --text-muted: #64748b;
+    --border-soft: #e2e8f0;
+    --transition-premium: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* REGLAGES DE BASE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--dark-text-slate);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.text-center { text-align: center; }
+
+/* ==========================================================================
+   EN-TÊTE CENTRÉE (CONFORME À LA MAQUETTE PHOTO ENVOYÉE)
+   ========================================================================== */
+.services-intro-section {
+    padding: 160px 0 60px 0;
+    background-color: #ffffff;
+}
+
+.services-badge {
+    display: inline-block;
+    background-color: rgba(255, 107, 0, 0.08);
+    color: var(--orange-pn-contour);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.page-main-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--blue-pn-historique);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.page-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   ZONE DES 8 CARTES AVEC EFFET CONSTELLATION REHAUSSÉ
+   ========================================================================== */
+.services-grid-section {
+    position: relative;
+    padding: 60px 0 100px 0;
+    background-color: #ffffff;
+}
+
+#constellationCanvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.services-main-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* STRUCTURE INITIALE DE LA CARTE GRIS CLAIR (FIDELE AUX PHOTOS MAQUETTES) */
+.service-premium-card {
+    background-color: var(--bg-light-cards);
+    border: 1px solid var(--border-soft);
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.4s ease;
+}
+
+.card-icon-wrapper {
+    width: 48px; height: 48px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.svg-service-icon {
+    width: 36px; height: 36px;
+    fill: var(--blue-pn-historique);
+    transition: fill 0.3s ease;
+}
+
+.service-premium-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--blue-pn-historique);
+    margin-bottom: 12px;
+}
+
+.service-premium-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* SURVOL DES CARTES (ÉLÉVATION + CONTOUR ORANGE COMPLET + OMBRE PORTÉE) */
+.service-premium-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--orange-pn-contour);
+    box-shadow: 0 22px 35px rgba(30, 58, 109, 0.12);
+}
+
+/* Activation du passage à l'orange de l'icône au survol */
+.service-premium-card:hover .svg-service-icon {
+    fill: var(--orange-pn-contour);
+}
+
+/* LUEUR DE BRILLANT FLASH (GLASS GLINT EFFECT) À L'INTERACTION */
+.glint-effect {
+    position: absolute;
+    top: 0; left: -150%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+}
+
+.service-premium-card:hover .glint-effect {
+    animation: flashGlint 0.6s ease;
+}
+
+@keyframes flashGlint {
+    100% { left: 150%; }
+}
+
+/* ==========================================================================
+   BAS DE PAGE DE CONVERSION ET BOUTON INTERACTIF AVEC ARRÊT DES PULSES
+   ========================================================================== */
+.conversion-cta-section {
+    padding: 80px 0;
+    background-color: var(--blue-cta-layer);
+    color: #ffffff;
+}
+
+.cta-inner-box {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-inner-box h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.cta-inner-box p {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    margin-bottom: 36px;
+}
+
+/* CONTENEUR DU BOUTON ACTIONS */
+.cta-action-holder {
+    display: inline-block;
+    position: relative;
+}
+
+.btn-pulse-contact {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--orange-pn-contour);
+    color: #ffffff;
+    padding: 16px 36px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+}
+
+.btn-pulse-contact:hover {
+    background-color: #e05e00;
+}
+
+/* Onde de choc active par défaut (Animation continue) */
+.btn-pulse-wave {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 6px;
+    border: 2px solid var(--orange-pn-contour);
+    box-sizing: border-box;
+    z-index: -1;
+    animation: pulseAura 2.2s infinite;
+}
+
+/* CORRECTION DU SÉLECTEUR : Arrêt immédiat et disparition au survol réel */
+.btn-pulse-contact:hover .btn-pulse-wave {
+    animation: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+@keyframes pulseAura {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN ADAPTATIF SÉCURISÉ
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .services-main-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 992px) {
+    .services-main-grid { grid-template-columns: repeat(2, 1fr); }
+    .page-main-title { font-size: 2rem; }
+}
+
+@media (max-width: 576px) {
+    .services-main-grid { grid-template-columns: 1fr; }
+    .page-main-title { font-size: 1.7rem; }
+}
+
+/* À ajouter dans services.css pour activer le survol sur l'icône réseau */
+.service-premium-card:hover .svg-service-icon path,
+.service-premium-card:hover .svg-service-icon circle {
+    stroke: var(--orange-pn-contour);
+}
+
+::selection{
+    color: orange;
+    background-color: lightblue;
+}

@@ -1,0 +1,192 @@
+/* Variables Globales de Couleur */
+:root {
+    --primary-blue: #002147;       /* Bleu nuit profond */
+    --accent-orange: #ff6600;      /* Orange vif de base */
+    --hover-orange: #be4c00;       /* CORRECTION : Orange plus SOMBRE pour le survol */
+    --light-blue-bg: #f0f4f8;     /* Fond bleu très léger pour l'en-tête */
+    --text-dark: #333333;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--dark-text-slate); background: #ffffff; }
+.container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+
+/* En-tête avec fond bleu léger */
+.about-hero-section {
+    background-color: var(--light-blue-bg);
+    padding: 150px 0;
+    text-align: center;
+    border-bottom: 1px solid #e1e8ed;
+}
+.about-hero-section h1 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+.subtitle-badge {
+    color: var(--accent-orange);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+/* Grille Histoire et Mosaïque (Option A) */
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 60px 0;
+    align-items: center;
+}
+.history-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    z-index: 3;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.main-img {
+    grid-column: 1 / 3;
+    height: 220px;
+}
+.sub-img-1, .sub-img-2 {
+    height: 140px;
+}
+
+/* Cartes des valeurs et les Boules Bleues */
+.values-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+.value-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #eef2f5;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 33, 71, 0.05);
+    border-color: var(--accent-orange); /* Lueur orange sur le contour */
+}
+
+/* CORRECTION CHIRURGICALE : LA BOULE EST BLEUE */
+.icon-sphere-blue {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-blue); /* Couleur bleue unie */
+    color: #ffffff;                        /* Icône blanche à l'intérieur */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 33, 71, 0.2);
+}
+
+/* Descriptif Certifications */
+.certs-description {
+    max-width: 800px;
+    margin: 10px auto 30px auto;
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: center;
+}
+.brands-marquee {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px 0;
+}
+.brand-logo-box img {
+    height: 50px;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.brand-logo-box img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Bandeau de conclusion */
+.cta-about-footer {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    padding: 60px 0;
+    margin-top: 40px;
+}
+
+/* COMPORTEMENT DU BOUTON PULSE ORANGE */
+.btn-pulse-orange {
+    position: relative;
+    display: inline-block;
+    background-color: var(--accent-orange);
+    color: #ffffff;
+    padding: 15px 35px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+}
+
+/* Animation de double pulsation en arrière-plan */
+.btn-pulse-orange::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 30px;
+    background-color: var(--accent-orange);
+    opacity: 0.4;
+    z-index: -1;
+    animation: doublePulse 2s infinite ease-out;
+}
+
+@keyframes doublePulse {
+    0% { transform: scale(1); opacity: 0.4; }
+    100% { transform: scale(1.3); opacity: 0; }
+}
+
+/* CORRECTION : AU SURVOL, L'ORANGE DEVIENT PLUS SOMBRE ET L'ANIMATION S'ARRÊTE */
+.btn-pulse-orange:hover {
+    background-color: var(--hover-orange); /* Devient plus sombre */
+    transform: scale(1.03);
+}
+.btn-pulse-orange:hover::before {
+    animation: none; /* Arrêt net des cercles au survol pour rester propre */
+    opacity: 0;
+}
+
+/* Helpers utilitaires */
+.container { width: 85%; max-width: 1200px; margin: 0 auto; }
+.text-center { text-align: center; }
+.section-header { text-align: center; margin-bottom: 30px; }
+.section-header h2 { color: var(--primary-blue); font-size: 2rem; }
+
+/* Responsive Design basique */
+@media (max-width: 768px) {
+    .history-grid, .values-grid { grid-template-columns: 1fr; }
+    .history-gallery { order: -1; }
+}

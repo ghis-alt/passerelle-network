@@ -12,6 +12,11 @@
     --transition: all 0.3s ease;
 }
 
+::selection{
+    color: orange;
+    background-color: lightblue;
+}
+
 /* RESET ET STYLES GENERAUX */
 * {
     box-sizing: border-box;

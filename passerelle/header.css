@@ -5,6 +5,11 @@
     --text-white: #ffffff;
 }
 
+::selection{
+    color: orange;
+    background-color: lightblue;
+}
+
 
 /* Structure du Header */
 .main-header {

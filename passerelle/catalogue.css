@@ -8,6 +8,11 @@
     --border-soft: #e2e8f0;
 }
 
+::selection{
+    color: orange;
+    background-color: lightblue;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--dark-text-slate); background: #ffffff; }
 .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }

@@ -1,15 +1,15 @@
 // BASE DE DONNÉES BRUTE (10 PRODUITS D'AMORÇAGE CONFORME AU CAHIER DES CHARGES)
 const productsDatabase = [
-    { id: 1, title: "Routeur Cisco ISR 4331", category: "reseaux", brand: "cisco", priceXAF: 2450000, stock: true, img: "cisco_router.png", desc: "Routeur de services intégrés pour liaisons spécialisées d'entreprises." },
-    { id: 2, title: "Commutateur Cisco Catalyst 2960", category: "reseaux", brand: "cisco", priceXAF: 1150000, stock: true, img: "cisco_switch.png", desc: "Switch managé 24 ports Gigabit pour infrastructures LAN robustes." },
-    { id: 3, title: "PC Portable Dell Latitude 5440", category: "materiel", brand: "dell", priceXAF: 190000, stock: true, img: "dell_laptop.png", desc: "Ordinateur professionnel Intel Core i5, 16GB RAM, 512GB SSD." },
-    { id: 4, title: "Serveur Rack HP ProLiant DL360", category: "materiel", brand: "hp", priceXAF: 4800000, stock: false, img: "hp_server.png", desc: "Performances de calcul denses pour centres de données et virtualisation." },
+    { id: 1, title: "Routeur Cisco ISR 4331", category: "reseaux", brand: "cisco", priceXAF: 2450000, stock: true, img: "routeur.png", desc: "Routeur de services intégrés pour liaisons spécialisées d'entreprises." },
+    { id: 2, title: "Souris", category: "accessoires", brand: "hp", priceXAF: 9000, stock: true, img: "souris.png", desc: "Souris optique pour un usage professionnel." },
+    { id: 3, title: "PC Portable HP Latitude 5440", category: "materiel", brand: "hp", priceXAF: 190000, stock: true, img: "ordinateur-hp.png", desc: "Ordinateur professionnel Intel Core i5, 16GB RAM, 512GB SSD." },
+    { id: 4, title: "Serveur Rack HP ProLiant DL360", category: "materiel", brand: "hp", priceXAF: 4800000, stock: false, img: "serveur.png", desc: "Performances de calcul denses pour centres de données et virtualisation." },
     { id: 5, title: "iPhone 15 Pro Max 256GB", category: "accessoires", brand: "apple", priceXAF: 120000, stock: true, img: "iphone.png", desc: "Smartphone iOS haut de gamme avec châssis en titane et optique pro." },
-    { id: 6, title: "PC Portable Acer Aspire 5", category: "materiel", brand: "acer", priceXAF: 205000, stock: true, img: "acer_laptop.png", desc: "Ordinateur polyvalent idéal pour la bureautique et les formations." },
-    { id: 7, title: "Baie de Brassage Réseau 22U", category: "reseaux", brand: "dell", priceXAF: 650000, stock: true, img: "baie.png", desc: "Armoire technique sécurisée pour serveurs et interconnexions." },
-    { id: 8, title: "Câble Ethernet Cat6 UTP 305m", category: "accessoires", brand: "hp", priceXAF: 120000, stock: true, img: "cable.png", desc: "Bobine de câble réseau haute performance pour déploiements LAN." },
-    { id: 9, title: "Disque Dur Externe SanDisk 2TO", category: "accessoires", brand: "apple", priceXAF: 145000, stock: true, img: "sandisk.png", desc: "Stockage SSD externe ultra-rapide pour sauvegardes de données." },
-    { id: 10, title: "Station de Travail Dell Precision", category: "materiel", brand: "dell", priceXAF: 3200000, stock: false, img: "dell_workstation.png", desc: "Puissance de calcul extrême pour infographie et calculs lourds." }
+    { id: 6, title: "PC Portable Acer Aspire 5", category: "materiel", brand: "acer", priceXAF: 205000, stock: true, img: "ordinateur.png", desc: "Ordinateur polyvalent idéal pour la bureautique et les formations." },
+    { id: 7, title: "Clé USB Kingston 32GB", category: "accessoires", brand: "kingston", priceXAF: 8000, stock: true, img: "USB.png", desc: "Clé USB de stockage portable avec une capacité élevée." },
+    { id: 8, title: "Câble Reseau Ethernet Cat6 Snagless 5m", category: "accessoires", brand: "hp", priceXAF: 40000, stock: true, img: "ethernet.png", desc: "Bobine de câble réseau haute performance pour déploiements LAN." },
+    { id: 9, title: "Imprimante Laser HP LaserJet Pro MFP", category: "accessoires", brand: "hp", priceXAF: 145000, stock: true, img: "imprimante.png", desc: "Imprimante laser multifonctions pour les environnements professionnels." },
+    { id: 10, title: "Téléphone IP Cisco SPA504G", category: "accessoires", brand: "cisco", priceXAF: 180000, stock: true, img: "telephone.png", desc: "Téléphone IP professionnel avec écran TFT couleur et fonctionnalités avancées." }
 ];
 
 // TAUX DE CONVERSION (Base 1 XAF)

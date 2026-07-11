@@ -9,6 +9,11 @@
     --border-color-soft: #e2e8f0;   /* Bordures discrètes */
 }
 
+::selection{
+    color: orange;
+    background-color: lightblue;
+}
+
 body {
     background-color: var(--bg-light-clean);
     color: var(--dark-slate-text);

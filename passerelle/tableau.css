@@ -1,6 +1,10 @@
 /* =========================================================================
    BACK-OFFICE : TABLEAU DE RÉCEPTION JSON ET CELLULE DE NOTIFICATION
    ========================================================================= */
+::selection{
+    color: orange;
+    background-color: lightblue;
+}
 
 .admin-container {
     max-width: 1200px;
